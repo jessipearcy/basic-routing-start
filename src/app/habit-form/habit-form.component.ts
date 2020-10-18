@@ -9,18 +9,16 @@ import { Habit } from '../models/habit';
   styleUrls: ['./habit-form.component.scss'],
 })
 export class HabitFormComponent implements OnInit {
-  @Output() onExit = new EventEmitter();
-  @Input() habit: Habit;
+  public habit: Habit;
+  public habits: Habit[];
+  public editingIndex: number;
+  public editing = false;
 
-  habitForm = new FormGroup({
+  public habitForm = new FormGroup({
     name: new FormControl(''),
     frequency: new FormControl(''),
     description: new FormControl(''),
   });
-
-  editingIndex: number;
-
-  public habits: Habit[];
 
   constructor() {}
 
@@ -54,6 +52,5 @@ export class HabitFormComponent implements OnInit {
 
   exitForm() {
     this.habitForm.reset();
-    this.onExit.emit();
   }
 }
