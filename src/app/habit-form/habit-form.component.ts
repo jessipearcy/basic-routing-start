@@ -24,11 +24,6 @@ export class HabitFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.habits = HABITS;
-
-    if (this.habit) {
-      this.editingIndex = this.habits.indexOf(this.habit);
-      this.setEditForm(this.habit);
-    }
   }
 
   public setEditForm(habit: Habit) {
