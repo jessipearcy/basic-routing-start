@@ -25,7 +25,8 @@ export class HabitFormComponent implements OnInit {
     this.habits = HABITS;
   }
 
-  public setEditForm(habit: Habit) {
+  public setEditForm() {
+    const habit = HABITS[this.editingIndex];
     this.habitForm.patchValue({
       name: habit.name,
       frequency: habit.frequency,
