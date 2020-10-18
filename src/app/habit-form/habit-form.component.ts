@@ -9,7 +9,6 @@ import { Habit } from '../models/habit';
   styleUrls: ['./habit-form.component.scss'],
 })
 export class HabitFormComponent implements OnInit {
-  public habit: Habit;
   public habits: Habit[];
   public editingIndex: number;
   public editing = false;
@@ -37,7 +36,7 @@ export class HabitFormComponent implements OnInit {
   public onSubmit() {
     const habit = this.habitForm.value as Habit;
 
-    if (this.habit) {
+    if (this.editing) {
       this.habits.splice(this.editingIndex, 1, habit);
     } else {
       this.habits.push(habit);
