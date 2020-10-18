@@ -47,5 +47,6 @@ export class HabitFormComponent implements OnInit {
 
   exitForm() {
     this.habitForm.reset();
+    this.editing = false;
   }
 }
